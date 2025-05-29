@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+  </head>
+  <body>
+    <a-scene embeded arjs="patternRatio:0.80">
+      <a-marker
+        type="pattern"
+        url="https://cdn.glitch.global/5aeac757-693a-478f-8988-bffa7be2eba7/marker.patt?v=1748513919143"
+      >
+        <a-box position="0 0 0" rotation="0 45 0" color="#4CC3D9"></a-box>
+       
+        <a-sky color="#ECECEC"></a-sky>
+      </a-marker>
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>
+
