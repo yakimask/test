@@ -1,11 +1,10 @@
-
 <html>
   <head>
     <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
   </head>
   <body>
-    <a-scene embedded arjs="patternRatio:0.80" vr-mode-ui="enabled:false">
+    <a-scene embedded arjs="patternRatio:0.80; transparent: true;" vr-mode-ui="enabled:false">
       <a-marker
         type="pattern"
         url="https://yakimask.github.io/test/marker.patt">
@@ -29,28 +28,28 @@
           src="https://yakimask.github.io/test/YouTubeaikon（1）.jpg"
         ></a-image>
 
-        <a-sky color="#ECECEC"></a-sky>
-      </a-marker>
+        </a-marker>
       <a-entity camera raycaster="objects: #xlogo, #youtubeLogo" cursor="fuse: false; rayOrigin: mouse;"></a-entity>
 
       <script>
         document.addEventListener('DOMContentLoaded', function () {
           var xlogo = document.querySelector('#xlogo');
-          var youtubeLogo = document.querySelector('#youtubeLogo'); // YouTubeロゴの要素を取得
+          var youtubeLogo = document.querySelector('#youtubeLogo');
 
           xlogo.addEventListener('click', function () {
             console.log('Xロゴがクリックされました！');
-            window.open('https://x.com/meisei_denkibu', '_blank'); // 新しいタブでリンクを開く
+            window.open('https://x.com/meisei_denkibu', '_blank');
           });
 
-          // YouTubeロゴのクリックリスナーを追加
           youtubeLogo.addEventListener('click', function () {
             console.log('YouTubeロゴがクリックされました！');
-            window.open('https://youtube.com/channel/UC8mW4b5AgJsmDdX_oxM6t-w?si=1ePkDmWq_9Uxtd4F', '_blank'); 
+            window.open('https://youtube.com/channel/UC8mW4b5AgJsmDdX_oxM6t-w?si=1ePkDmWq_9Uxtd4F', '_blank');
           });
         });
       </script>
     </a-scene>
   </body>
 </html>
+
+
 
