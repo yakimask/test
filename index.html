@@ -1,44 +1,32 @@
 <html>
-  <head>
-    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
-  </head>
-  <body>
-    <a-scene embedded arjs="patternRatio:0.80" vr-mode-ui="enabled:false">
-      <a-marker
-        type="pattern"
-        url="https://yakimask.github.io/test/marker.patt">
-        <a-image id="denkibu"
-          width="1" 
-          height="1"
-          position="0 0 0" 
-          rotation="90 0 0"
-          src="https://yakimask.github.io/test/test.png"
-        ></a-image>
-        <a-image id="xlogo"
-          width="0.5" 
-          height="0.5"
-          position="0 0 1.5" rotation="90 0 0"
-          src="https://yakimask.github.io/test/xlogo1.jpg"
-        ></a-image>
-        
-        <a-sky color="#ECECEC"></a-sky>
-      </a-marker>
-      <a-entity camera raycaster="objects: #xlogo" cursor="fuse: false; rayOrigin: mouse;"></a-entity>
-
-      <script>
-        // DOMContentLoadedイベントで処理を開始
-        document.addEventListener('DOMContentLoaded', function () {
-          var xlogo = document.querySelector('#xlogo'); // xlogo要素を取得
-
-          // xlogoがクリックされたときのイベントリスナーを設定
-          xlogo.addEventListener('click', function () {
-            console.log('xlogo clicked!'); // デバッグ用にコンソールに出力
-            window.open('https://x.com/meisei_denkibu', '_blank'); // 新しいタブでリンクを開く
-          });
-        });
-      </script>
-    </a-scene>
-  </body>
+  <head>
+    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+  </head>
+  <body>
+    <a-scene embeded arjs="patternRatio:0.80"　vr-mode-ui="enabled:false">
+      <a-marker
+        type="pattern"
+        url="https://yakimask.github.io/test/marker.patt">
+        <a-image id="denkibu"
+          width="1" 
+          height="1"
+          position="0 0 0" 
+          rotation="90 0 0"
+          src="https://yakimask.github.io/test/test.png"
+        ></a-image>
+       <a-image id="xlogo"
+          width="0.5" 
+          height="0.5"
+          position="0 0 2" 
+          rotation="90 0 45"
+          src="https://yakimask.github.io/test/xlogo1.jpg"
+         link="href:https://x.com/meisei_denkibu"
+         ></a-image>   
+       
+        <a-sky color="#ECECEC"></a-sky>
+      </a-marker>
+      <a-entity camera cursor="fuse:false;rayOrigin:mouse;"></a-entity>
+    </a-scene>
+  </body>
 </html>
-
