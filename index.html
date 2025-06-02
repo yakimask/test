@@ -10,47 +10,47 @@
         type="pattern"
         url="https://yakimask.github.io/test/marker.patt">
         <a-image id="denkibu"
-          width="1" 
+          width="1"
           height="1"
-          position="0 0 0" 
+          position="0 0 0"
           rotation="90 0 0"
           src="https://yakimask.github.io/test/denkibuaikon（1）.jpg"
         ></a-image>
         <a-image id="xlogo"
-          width="0.5" 
+          width="0.5"
           height="0.5"
           position="0 0 2" rotation="90 0 90"
           src="https://yakimask.github.io/test/xlogo1.jpg"
         ></a-image>
-           <a-image id="YouTube"
-          width="0.5" 
+        <a-image id="youtubeLogo"
+          width="0.5"
           height="0.5"
-          position="0 0 2" rotation="90 0 90"
-          src="https://yakimask.github.io/test/you.jpg"
-          link=   <a-image id="xlogo"
-          width="0.5" 
-          height="0.5"
-          position="0 0 2" rotation="90 0 90"
+          position="1 0 2" rotation="90 0 90"
           src="https://yakimask.github.io/test/YouTubeikon（1）.jpg"
-          link=https://youtube.com/channel/UC8mW4b5AgJsmDdX_oxM6t-w?si=75M7tXV42Jr45ZCr
-             ></a-image>
-        
+        ></a-image>
+
         <a-sky color="#ECECEC"></a-sky>
       </a-marker>
-      <a-entity camera raycaster="objects: #xlogo" cursor="fuse: false; rayOrigin: mouse;"></a-entity>
+      <a-entity camera raycaster="objects: #xlogo, #youtubeLogo" cursor="fuse: false; rayOrigin: mouse;"></a-entity>
 
       <script>
-        // DOMContentLoadedイベントで処理を開始
         document.addEventListener('DOMContentLoaded', function () {
-          var xlogo = document.querySelector('#xlogo'); // xlogo要素を取得
+          var xlogo = document.querySelector('#xlogo');
+          var youtubeLogo = document.querySelector('#youtubeLogo'); // YouTubeロゴの要素を取得
 
-          // xlogoがクリックされたときのイベントリスナーを設定
           xlogo.addEventListener('click', function () {
-            console.log('xlogo clicked!'); // デバッグ用にコンソールに出力
+            console.log('Xロゴがクリックされました！');
             window.open('https://x.com/meisei_denkibu', '_blank'); // 新しいタブでリンクを開く
+          });
+
+          // YouTubeロゴのクリックリスナーを追加
+          youtubeLogo.addEventListener('click', function () {
+            console.log('YouTubeロゴがクリックされました！');
+            window.open('https://youtube.com/channel/UC8mW4b5AgJsmDdX_oxM6t-w?si=1ePkDmWq_9Uxtd4F', '_blank'); 
           });
         });
       </script>
     </a-scene>
   </body>
 </html>
+
