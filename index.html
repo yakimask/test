@@ -4,7 +4,7 @@
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
   </head>
   <body>
-    <a-scene embedded arjs="patternRatio:0.80; transparent: true;" vr-mode-ui="enabled:false">
+    <a-scene embedded arjs="patternRatio:0.80" vr-mode-ui="enabled:false">
       <a-marker
         type="pattern"
         url="https://yakimask.github.io/test/marker.patt">
@@ -18,38 +18,41 @@
         <a-image id="xlogo"
           width="0.5"
           height="0.5"
-          position="0 0 1" rotation="90 0 90"
+          position="0 0 2" rotation="90 0 90"
           src="https://yakimask.github.io/test/xlogo1.jpg"
         ></a-image>
         <a-image id="youtubeLogo"
           width="0.5"
           height="0.5"
-          position="1 0 1" rotation="90 0 0"
-          src="https://yakimask.github.io/test/YouTubeaikon（1）.jpg"
+          position="0 0 2" rotation="90 0 0"
+          src="https://yakimask.github.io/test/YouTubeikon（1）.jpg"
         ></a-image>
 
-        </a-marker>
+        <a-sky color="#ECECEC"></a-sky>
+      </a-marker>
       <a-entity camera raycaster="objects: #xlogo, #youtubeLogo" cursor="fuse: false; rayOrigin: mouse;"></a-entity>
 
       <script>
         document.addEventListener('DOMContentLoaded', function () {
           var xlogo = document.querySelector('#xlogo');
-          var youtubeLogo = document.querySelector('#youtubeLogo');
+          var youtubeLogo = document.querySelector('#youtubeLogo'); // Get the YouTube logo element
 
           xlogo.addEventListener('click', function () {
-            console.log('Xロゴがクリックされました！');
+            console.log('xlogo clicked!');
             window.open('https://x.com/meisei_denkibu', '_blank');
           });
 
+          // Add click listener for YouTube logo
           youtubeLogo.addEventListener('click', function () {
-            console.log('YouTubeロゴがクリックされました！');
-            window.open('https://youtube.com/channel/UC8mW4b5AgJsmDdX_oxM6t-w?si=1ePkDmWq_9Uxtd4F', '_blank');
+            console.log('YouTube logo clicked!');
+            window.open('https://youtube.com/channel/UC8mW4b5AgJsmDdX_oxM6t-w?si=eBu7WvPZQq5eAODp, '_blank'); // Replace with your desired YouTube URL
           });
         });
       </script>
     </a-scene>
   </body>
 </html>
+
 
 
 
