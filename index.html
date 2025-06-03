@@ -39,35 +39,30 @@
 
       </a-marker>
 
-      <a-entity camera>
+      <a-entity camera position="0 0 0">
         <a-entity cursor="fuse: false; rayOrigin: mouse;"
                   raycaster="objects: #xlogo, #youtubeLogo; far: 1000;">
         </a-entity>
       </a-entity>
 
       <script>
-        // DOMContentLoaded: HTMLが完全に読み込まれて解析された後に実行されます
         document.addEventListener('DOMContentLoaded', function () {
-          // XロゴとYouTubeロゴの要素を取得します
           var xlogo = document.querySelector('#xlogo');
           var youtubeLogo = document.querySelector('#youtubeLogo');
 
-          // Xロゴのクリックイベントリスナー
           xlogo.addEventListener('click', function () {
             console.log('Xロゴがクリックされました！');
-            // リンク先が誤っている可能性があるので修正
             window.open('https://x.com/meisei_denkibu', '_blank');
           });
 
-          // YouTubeロゴのクリックイベントリスナー
           youtubeLogo.addEventListener('click', function () {
             console.log('YouTubeロゴがクリックされました！');
-            // リンク先が誤っている可能性があるので修正
-            window.open('https://www.youtube.com/channel/UC8mW4b5AgJsmDdX_oxM6t-w', '_blank'); 
+            window.open('https://www.youtube.com/channel/UC8mW4b5AgJsmDdX_oxM6t-w', '_blank');
           });
         });
       </script>
     </a-scene>
   </body>
 </html>
+
 
