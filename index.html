@@ -1,13 +1,33 @@
+<!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR Links</title>
     <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+    <style>
+      /* HTMLとbodyの高さと幅をビューポートいっぱいに設定し、余白をなくします */
+      html, body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        overflow: hidden; /* スクロールバーが表示されないようにします */
+      }
+      /* a-sceneがビューポートいっぱいに広がるように設定します */
+      a-scene {
+        width: 100%;
+        height: 100%;
+        display: block; /* ブロック要素として表示します */
+      }
+    </style>
   </head>
   <body>
-    <a-scene embedded arjs="patternRatio:0.80" vr-mode-ui="enabled:false">
+    <a-scene embedded arjs="patternRatio:0.80; transparent: true;" vr-mode-ui="enabled:false">
+
       <a-marker
         type="pattern"
         url="https://yakimask.github.io/test/marker.patt">
+
         <a-image id="denkibu"
           width="1"
           height="1"
@@ -15,37 +35,40 @@
           rotation="90 0 0"
           src="https://yakimask.github.io/test/denkibuaikon（1）.jpg"
         ></a-image>
+
         <a-image id="xlogo"
           width="0.5"
           height="0.5"
-          position="0 0 2" rotation="90 0 90"
+          position="-0.5 0 1" rotation="90 0 90"
           src="https://yakimask.github.io/test/xlogo1.jpg"
         ></a-image>
+
         <a-image id="youtubeLogo"
           width="0.5"
           height="0.5"
-          position="0 0 2" rotation="90 0 0"
-          src="https://yakimask.github.io/test/YouTubeikon（1）.jpg"
+          position="0.5 0 1" rotation="90 0 0"
+          src="https://yakimask.github.io/test/YouTubeaikon（1）.jpg"
         ></a-image>
 
-        <a-sky color="#ECECEC"></a-sky>
       </a-marker>
+
       <a-entity camera raycaster="objects: #xlogo, #youtubeLogo" cursor="fuse: false; rayOrigin: mouse;"></a-entity>
 
       <script>
+        // DOMContentLoaded: HTMLが完全に読み込まれて解析された後に実行されます
         document.addEventListener('DOMContentLoaded', function () {
+          // XロゴとYouTubeロゴの要素を取得します
           var xlogo = document.querySelector('#xlogo');
-          var youtubeLogo = document.querySelector('#youtubeLogo'); // Get the YouTube logo element
+          var youtubeLogo = document.querySelector('#youtubeLogo');
 
+          // Xロゴのクリックイベントリスナー
           xlogo.addEventListener('click', function () {
-            console.log('xlogo clicked!');
+            console.log('Xロゴがクリックされました！');
             window.open('https://x.com/meisei_denkibu', '_blank');
           });
-
-          // Add click listener for YouTube logo
           youtubeLogo.addEventListener('click', function () {
-            console.log('YouTube logo clicked!');
-            window.open('https://youtube.com/channel/UC8mW4b5AgJsmDdX_oxM6t-w?si=eBu7WvPZQq5eAODp, '_blank'); // Replace with your desired YouTube URL
+            console.log('YouTubeロゴがクリックされました！');
+            window.open('あなたのYouTubeチャンネルの実際のURLをここに貼り付け', '_blank');
           });
         });
       </script>
