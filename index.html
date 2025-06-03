@@ -1,5 +1,4 @@
-
-!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -53,7 +52,11 @@
 
       </a-marker>
 
-      <a-entity camera raycaster="objects: #xlogo, #youtubeLogo" cursor="fuse: false; rayOrigin: mouse;"></a-entity>
+      <a-entity camera>
+        <a-entity cursor="fuse: false; rayOrigin: mouse;"
+                  raycaster="objects: #xlogo, #youtubeLogo; far: 1000;">
+        </a-entity>
+      </a-entity>
 
       <script>
         // DOMContentLoaded: HTMLが完全に読み込まれて解析された後に実行されます
@@ -65,14 +68,19 @@
           // Xロゴのクリックイベントリスナー
           xlogo.addEventListener('click', function () {
             console.log('Xロゴがクリックされました！');
-            window.open('https://www.youtube.com/channel/UC8mW4b5AgJsmDdX_oxM6t-w', '_blank');
+            // リンク先が誤っている可能性があるので修正
+            window.open('https://x.com/meisei_denkibu', '_blank');
           });
+
+          // YouTubeロゴのクリックイベントリスナー
           youtubeLogo.addEventListener('click', function () {
             console.log('YouTubeロゴがクリックされました！');
-            window.open('https://x.com/meisei_denkibu', '_blank');
+            // リンク先が誤っている可能性があるので修正
+            window.open('https://www.youtube.com/channel/UC8mW4b5AgJsmDdX_oxM6t-w', '_blank'); 
           });
         });
       </script>
     </a-scene>
   </body>
-</html>   
+</html>
+
