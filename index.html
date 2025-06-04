@@ -39,7 +39,7 @@
           src="https://yakimask.github.io/test/homepage.png"
         ></a-image>
 
-        </a-marker>
+      </a-marker>
 
       <a-entity camera>
         <a-entity cursor="fuse: false; rayOrigin: mouse;"
@@ -50,18 +50,17 @@
       <script>
         document.addEventListener('DOMContentLoaded', function () {
           var xlogo = document.querySelector('#xlogo');
-          // var youtubeLogo = document.querySelector('#youtubeLogo'); // YouTubeロゴの要素取得を削除
 
-          // Xロゴのクリックイベントリスナー
           xlogo.addEventListener('click', function () {
             console.log('Xロゴがクリックされました！');
-            // リンク先を電気部のホームページに変更
             window.open('https://meisei-denkibu.github.io/homepage/', '_blank');
           });
+        }); 
       </script>
     </a-scene>
   </body>
 </html>
+
 
 
 
